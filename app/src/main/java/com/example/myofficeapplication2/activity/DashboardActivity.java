@@ -129,8 +129,8 @@ public class DashboardActivity extends AppCompatActivity {
 
                         popup.show();
 
-                    }
-                });
+                    });
+                }
 
                 edtSelectTaluka.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -162,50 +162,8 @@ public class DashboardActivity extends AppCompatActivity {
                         });
 
                         popup.show();
-                    }
-                });
-
-                edtSelectTaluka.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        final PopupMenu popup = new PopupMenu(context, edtSelectTaluka);
-                        popup.getMenuInflater()
-                                .inflate(R.menu.taluka_amrawati_type, popup.getMenu());
-
-
-                        popup.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
-                            public boolean onMenuItemClick(MenuItem item) {
-                                rlTalukaBox.setVisibility(View.VISIBLE);
-                                edtSelectTaluka.setText(item.getTitle());
-
-                                if (item.getTitle().equals("Chandur Railway")){
-                                    Glide.with( context )
-                                            .load(R.drawable.chandurrailwayelevation )
-                                            .into( imageMap );
-                                }
-                                else if (item.getTitle().equals("Chikhaldhara")) {
-                                    Glide.with(context)
-                                            .load(R.drawable.chikhaldharaelevation)
-                                            .into(imageMap);
-                                }
-                                else if (item.getTitle().equals("Dhamangaon")) {
-                                    Glide.with(context)
-                                            .load(R.drawable.dhamangaonelevation)
-                                            .into(imageMap);
-                                }
-                                else if (item.getTitle().equals("Dharni")) {
-                                    Glide.with(context)
-                                            .load(R.drawable.dharnielevation)
-                                            .into(imageMap);
-                                }
-
-                                return true;
-                            }
-                        });
-
-                        popup.show();
-                    }
-                });
+                    });
+                }
 
 
                 edtSelectSoilProperties.setOnClickListener(new View.OnClickListener() {
@@ -393,7 +351,8 @@ public class DashboardActivity extends AppCompatActivity {
                 float y = event.getY(0) + event.getY(1);
                 point.set(x / 2, y / 2);
             }
-        });
+        }
     }
+
 
 
